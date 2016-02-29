@@ -69,10 +69,7 @@ public class SpaceShip implements Entity, ImageObserver
 			total++;}
 		if(y<yCoord+SpaceShipHeight){
 			total++;}
-		if(total == 4){
-			return true;}
-		else
-		return false;
+		return (total == 4);
 	}
 	
 	@Override
@@ -84,10 +81,8 @@ public class SpaceShip implements Entity, ImageObserver
 
 	}
 
-	//unused
 	@Override
-	public boolean imageUpdate(Image img, int infoflags, int x, int y,
-			int width, int height) {
+	public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
 		return false;
 	}
 }

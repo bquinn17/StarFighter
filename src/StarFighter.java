@@ -30,9 +30,7 @@ public class StarFighter extends JFrame{
 	public void newGame(){
 		gameBoard.endGame();
 	}
-	/*public boolean soundEnable(){
-		return StarFighterMenu.soundEnabled();
-	}*/
+
 	public static void main(String[] args)
 	  {
 		  String plafName = UIManager.getSystemLookAndFeelClassName();
@@ -47,7 +45,7 @@ public class StarFighter extends JFrame{
 	    StarFighter window = new StarFighter();
 	    window.setBounds(100, 100, 400, 400);
 	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    window.setResizable(false);
+	    window.setResizable(true);
 	    window.setVisible(true);
 	  }
 }

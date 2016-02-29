@@ -54,7 +54,7 @@ public class SidePanel extends JPanel
 		//score.setForeground(Color.yellow);
 		panel.add(score);
 		scoreField = new JTextField("000");
-		scoreField.setEditable(true);
+		scoreField.setEditable(false);
 		//scoreField.setBackground(Color.cyan);
 		panel.add(scoreField);
 
@@ -156,7 +156,7 @@ public class SidePanel extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			String cmd = e.getActionCommand();
-			if(gameBoard.isgameOver == false){if ("Go".equals(cmd))
+			if(!gameBoard.isgameOver){if ("Go".equals(cmd))
 			{
 				go.setText("Stop");
 				gameBoard.newGame();

@@ -13,7 +13,6 @@ public class StarFighterMenu extends JMenuBar implements ActionListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	private StarFighter gameField; 
-	private JCheckBoxMenuItem sound;
 	private JMenuItem newgame, exit, gameRules;
 	
 	
@@ -28,9 +27,7 @@ public class StarFighterMenu extends JMenuBar implements ActionListener{
 	    gameRules = new JMenuItem("How To Play");
 	    gameRules.addActionListener(this);
 	    
-	    sound = new JCheckBoxMenuItem("Play Sound", false);
-	    //game.soundEnable();
-	    
+
 	    JMenu preferences = new JMenu("Preferences");
 	    JMenu helpMenu = new JMenu("Help");
 	    JMenu fileMenu = new JMenu("File");
@@ -39,15 +36,11 @@ public class StarFighterMenu extends JMenuBar implements ActionListener{
 	    this.add(helpMenu);
 	    
 	    fileMenu.add(preferences);
-	    preferences.add(sound); 
 	    fileMenu.add(newgame);
 	    fileMenu.add(exit);
 	    
 	    helpMenu.add(gameRules);
 	}
-	public boolean soundEnabled(){
-		return (sound.isSelected());
-	  }
 	public void actionPerformed(ActionEvent e)
 	  {
 	    JMenuItem src = (JMenuItem)e.getSource();

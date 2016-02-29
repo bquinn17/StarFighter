@@ -1,10 +1,8 @@
-import java.awt.Graphics;
-import java.awt.Image;
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 
 public class Coin implements Entity, ImageObserver {
@@ -58,23 +56,10 @@ public class Coin implements Entity, ImageObserver {
 	}
 	@Override
 	public boolean isInside(int x, int y) {
-		/*int total = 0;
-		if(x>xCoord){
-			total++;}
-		if(x<xCoord+asteriodWidth){
-			total++;}
-		if(y>yCoord){
-			total++;}
-		if(y<yCoord+asteriodHeight){
-			total++;}
-		if(total == 4){
-			return true;}
-		else
-			return false;*/
 		int xCenter = xCoord+(coinWidth/2);
 		int yCenter = yCoord+(coinHeight/2);
-		double/*int*/ distance = /*(int)*/(Math.sqrt(((x-xCenter)*(x-xCenter))+((y-yCenter)*(y-yCenter))));
-		int radius = coinWidth/2;
+		double distance = (Math.sqrt(((x-xCenter)*(x-xCenter))+((y-yCenter)*(y-yCenter))));
+		int radius = coinWidth / 2;
 		return (distance < radius);
 	}
 	@Override
