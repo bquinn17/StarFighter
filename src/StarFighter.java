@@ -1,6 +1,4 @@
-import javax.swing.JFrame;
-import javax.swing.UIManager;
-import javax.swing.Box;
+import javax.swing.*;
 
 public class StarFighter extends JFrame{	
 	/**

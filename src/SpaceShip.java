@@ -1,10 +1,8 @@
-import java.awt.Graphics;
-import java.awt.Image;
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 
 public class SpaceShip implements Entity, ImageObserver

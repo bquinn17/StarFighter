@@ -97,29 +97,25 @@ public class GameBoard extends JPanel
 	}
 
 	public boolean checkCollision() {
-		for (int i = 0; i < asteroidArray.size(); i++) {
+		for (Asteroid anAsteroidArray : asteroidArray) {
 			int x = SpaceShip.getX();
 			int y = SpaceShip.getY() + SpaceShip.getEntityHeight();
-			if (asteroidArray.get(i).isInside(x, y)) {
-				//collision.play();
+			if (anAsteroidArray.isInside(x, y)) {
 				return true;
 			}
 			int x2 = SpaceShip.getX() + SpaceShip.getEntityHeight();
 			int y2 = SpaceShip.getY() + SpaceShip.getEntityWidth();
-			if (asteroidArray.get(i).isInside(x2, y2)) {
-				//collision.play();
+			if (anAsteroidArray.isInside(x2, y2)) {
 				return true;
 			}
 			int x3 = SpaceShip.getX() + 20;
 			int y3 = SpaceShip.getY();
-			if (asteroidArray.get(i).isInside(x3, y3)) {
-				//collision.play();
+			if (anAsteroidArray.isInside(x3, y3)) {
 				return true;
 			}
 			int x4 = SpaceShip.getX() + SpaceShip.getEntityWidth() - 20;
 			int y4 = SpaceShip.getY();
-			if (asteroidArray.get(i).isInside(x4, y4)) {
-				//collision.play();
+			if (anAsteroidArray.isInside(x4, y4)) {
 				return true;
 			}
 
@@ -132,28 +128,24 @@ public class GameBoard extends JPanel
 			int x = SpaceShip.getX();
 			int y = SpaceShip.getY() + SpaceShip.getEntityHeight();
 			if (coinArray.get(i).isInside(x, y)) {
-				//collision.play();
 				coinArray.remove(i);
 				return true;
 			}
 			int x2 = SpaceShip.getX() + SpaceShip.getEntityHeight();
 			int y2 = SpaceShip.getY() + SpaceShip.getEntityWidth();
 			if (coinArray.get(i).isInside(x2, y2)) {
-				//collision.play();
 				coinArray.remove(i);
 				return true;
 			}
 			int x3 = SpaceShip.getX() + 20;
 			int y3 = SpaceShip.getY();
 			if (coinArray.get(i).isInside(x3, y3)) {
-				//collision.play();
 				coinArray.remove(i);
 				return true;
 			}
 			int x4 = SpaceShip.getX() + SpaceShip.getEntityWidth() - 20;
 			int y4 = SpaceShip.getY();
 			if (coinArray.get(i).isInside(x4, y4)) {
-				//collision.play();
 				coinArray.remove(i);
 				return true;
 			}
@@ -185,7 +177,6 @@ public class GameBoard extends JPanel
 	public void drawSpace(Graphics g) {
 		g.drawImage(space, 0, 0, null);
 		g.drawImage(space, 0, 0, getWidth(), 0, getWidth(), getHeight(), 0, getHeight(), null);
-		//g.drawImage(space, 0, getHeight(), getWidth(), getHeight(), getWidth(), 0, 0, 0, null);
 	}
 
 	public void drawGameOver(Graphics g) {
@@ -235,9 +226,6 @@ public class GameBoard extends JPanel
 			case KeyEvent.VK_KP_RIGHT:
 				dx = 1;
 				break;
-			case KeyEvent.VK_SPACE:
-				//shootBullet();
-				break;
 		}
 		if (dx == -1) {
 			for (int i = 0; i < 5; i++) {
@@ -259,13 +247,13 @@ public class GameBoard extends JPanel
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+		// Not used
 
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+		// Not used
 
 	}
 
