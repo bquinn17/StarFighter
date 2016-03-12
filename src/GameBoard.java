@@ -32,9 +32,11 @@ public class GameBoard extends JPanel
 			System.out.println("IOException");
 		}
 		this.setGame(game);
-		setPreferredSize(new Dimension(280, 350));
+		int height = 960;
+		int width = 720 - 180;
+		setPreferredSize(new Dimension(width, height));
 
-		SpaceShip = new SpaceShip();
+		SpaceShip = new SpaceShip(height, width);
 		asteroidArray = new ArrayList<>(0);
 		coinArray = new ArrayList<>(0);
 
@@ -182,9 +184,9 @@ public class GameBoard extends JPanel
 	public void drawGameOver(Graphics g) {
 		g.setColor(Color.RED);
 		if (game.sidePanel.getHighScore()) {
-			g.drawString("You Lost, New High Score!", getWidth() / 2 - 50, getHeight() / 2);
+			g.drawString("You Lost, New High Score!", (getWidth() / 2) - 180, getHeight() / 2);
 		} else {
-			g.drawString("You Lost", getWidth() / 2, getHeight() / 2);
+			g.drawString("You Lost", (getWidth() / 2) - 180, getHeight() / 2);
 		}
 	}
 

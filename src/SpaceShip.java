@@ -11,7 +11,7 @@ public class SpaceShip implements Entity, ImageObserver
 	private int SpaceShipHeight, SpaceShipWidth;
 	BufferedImage rocket = null;
 
-	public SpaceShip()
+	public SpaceShip(int height, int width)
 	{
 
 		try {
@@ -23,9 +23,11 @@ public class SpaceShip implements Entity, ImageObserver
 		}
 		SpaceShipHeight = rocket.getHeight();
 		SpaceShipWidth = rocket.getWidth();
-		
-		xCoord = (240-getEntityWidth())/2;
-		yCoord = 300-getEntityHeight();
+
+		xCoord = (width-SpaceShipWidth)/2;
+		yCoord = height - (2 *SpaceShipHeight) - 200;
+
+
 	}
 
 	@Override
@@ -41,12 +43,10 @@ public class SpaceShip implements Entity, ImageObserver
 	}
 	@Override
 	public int getEntityHeight(){
-		//32
 		return SpaceShipHeight;
 	}
 	@Override
 	public int getEntityWidth(){
-		//26
 		return SpaceShipWidth;
 	}
 

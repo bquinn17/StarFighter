@@ -41,7 +41,7 @@ public class StarFighter extends JFrame{
 		  System.out.println("*** " + plafName + " PLAF not installed ***");
 		  } 
 	    StarFighter window = new StarFighter();
-	    window.setBounds(100, 100, 400, 400);
+	    window.setBounds(100, 100, 720, 960);
 	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    window.setResizable(true);
 	    window.setVisible(true);

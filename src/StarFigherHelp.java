@@ -8,12 +8,14 @@ public class StarFigherHelp {
 	  public static void showHelp()
 	  {
 	    JOptionPane.showMessageDialog(null,
-	     "Earn points by not dying. \n" +
-	    "Die by getting hit with a rock. \n" +
-	     "Move with the arrow keys so you don't die \n" +
-	    "Coins give you more score \n" +
-	     "Don't ask why there are coins in space\n" +
-	    "We don't know either \n",
+	     "Press the start button to begin.\n" +
+	    "Dodge the asteroids by moving the rocket ship back and forth\n" +
+				 "by tapping or holding down your arrow keys.\n" +
+	     "Points are earn continuously for staying alive.\n" +
+	    "Earn extra points by collecting the golden coins.\n" +
+	     "To start a new game, go to File > New Game.\n" +
+	    "You may pause the game at any time,\n" +
+				 "but if you do your score will be set back to 0.\n",
 	        "How to Play",       // Dialog title
 	        JOptionPane.PLAIN_MESSAGE);
 	  }

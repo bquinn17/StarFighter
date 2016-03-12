@@ -14,11 +14,8 @@ public class SidePanel extends JPanel
 	private GameBoard gameBoard;
 	private JTextField highScoreField, scoreField;
 	private JButton go;
-	private Box box;
 	private boolean newHighScore;
-	private int highScoreInt;
-	
-	private String filename = "highscoreDoc.txt";
+
 	private String oldScore;
 	
 	SidePanel(GameBoard gameboard)
@@ -26,31 +23,30 @@ public class SidePanel extends JPanel
 		gameBoard = gameboard;
 
 		// setup GUI:
-		box = Box.createVerticalBox();
-		box.setPreferredSize(new Dimension(130, 300));
+		Box box = Box.createVerticalBox();
+		box.setPreferredSize(new Dimension(180, 300));
 		box.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 
 		JPanel panel = new JPanel();
-		GridLayout layout = new GridLayout(6,2);
+		GridLayout layout = new GridLayout(6,1);
 		panel.setLayout(layout);
 
+		setBackground(Color.GRAY);
+		panel.setBackground(Color.GRAY);
+
 		JLabel score = new JLabel("Score:");
-		//score.setForeground(Color.yellow);
 		panel.add(score);
 		scoreField = new JTextField("000");
 		scoreField.setEditable(false);
-		//scoreField.setBackground(Color.cyan);
 		panel.add(scoreField);
 
-		JLabel highScore = new JLabel("Highscore:");
+		JLabel highScore = new JLabel("High Score:");
 		panel.add(highScore);
-		
-		setBackground(Color.GRAY);
-		panel.setBackground(Color.GRAY);
-		
+
 		try
 		{
+			String filename = "highscoreDoc.txt";
 			FileReader fileReader = new FileReader(filename);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			
@@ -106,7 +102,7 @@ public class SidePanel extends JPanel
 	public void update(int score)
 	{
 		scoreField.setText(String.format("%03d", score));
-		highScoreInt = Integer.parseInt(highScoreField.getText());
+		int highScoreInt = Integer.parseInt(highScoreField.getText());
 		if(score > highScoreInt)
 		{
 			highScoreField.setText(String.format("%03d", score));
@@ -153,10 +149,7 @@ public class SidePanel extends JPanel
 				go.setText("Go");
 				requestFocus();
 			}}
-			/*else{
-				go.setText("Go");
-				requestFocus();
-			}*/
+
 		}
 	}
 }
